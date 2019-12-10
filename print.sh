@@ -13,13 +13,18 @@ fi
 
 function INSDEV()
 {
+    curl https://www.epson.jp/dl_soft/file/28883/EPSONPagePrinter_723_21.dmg -o /tmp/EPSONPagePrinter_723_21.dmg
+    hdiutil attach -mountpoint /Volumes/EPSON /tmp/EPSONPagePrinter_723_21.dmg
+    installer -pkg /Volumes/EPSON/EPSON\ Printer.pkg  -target /
+    hdiutil detach /Volumes/EPSON 
     curl https://www.komazawa-u.ac.jp/~joho/printer2015/Komazawa_u_pd_Mac_Ver4.zip -o /tmp/Komazawa_u_pd_Mac_Ver4.zip
     #curl -O https://ming.moe/Komazawa_u_pd_Mac_Ver4.zip
     unzip -o Komazawa_u_pd_Mac_Ver4.zip -x '__MACOSX/*'
-    installer -pkg 駒澤大学_プリンタードライバー_forMac_Ver4/駒澤大学_プリンタードライバーforMac.pkg -target /
+    #installer -pkg 駒澤大学_プリンタードライバー_forMac_Ver4/駒澤大学_プリンタードライバーforMac.pkg -target /
     installer -pkg 駒澤大学_プリンタードライバー_forMac_Ver4/SPSE\ CUPS\ Driver\ Input\ User\ Installer.pkg -target /
-    rm -rf 駒澤大学_プリンタードライバー_forMac_Ver4
-    rm -rf Komazawa_u_pd_Mac_Ver4.zip
+    rm -rf /tmp/駒澤大学_プリンタードライバー_forMac_Ver4
+    rm -rf /tmp/Komazawa_u_pd_Mac_Ver4.zip
+    rm -rf /tmp/EPSONPagePrinter_723_21.dmg
     echo "ドライバーインストール完了"
 }
 
