@@ -13,7 +13,7 @@ fi
 
 function INSDEV()
 {
-    curl https://www.epson.jp/dl_soft/file/28883/EPSONPagePrinter_723_21.dmg -o /tmp/EPSONPagePrinter_723_21.dmg
+    curl -L https://www.epson.jp/dl_soft/file/28883/EPSONPagePrinter_723_21.dmg -o /tmp/EPSONPagePrinter_723_21.dmg
     hdiutil attach -mountpoint /Volumes/EPSON /tmp/EPSONPagePrinter_723_21.dmg
     installer -pkg /Volumes/EPSON/EPSON\ Printer.pkg  -target /
     hdiutil detach /Volumes/EPSON 
