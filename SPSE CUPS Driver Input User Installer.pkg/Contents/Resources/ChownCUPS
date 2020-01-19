@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#change owner to "root"
+chown root:admin /usr/libexec/cups/backend/spssock

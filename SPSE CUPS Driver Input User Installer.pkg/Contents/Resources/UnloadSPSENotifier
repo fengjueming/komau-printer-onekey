@@ -1,0 +1,6 @@
+#!/bin/tcsh
+
+# Load SPSENotifier
+
+launchctl unload /Library/LaunchAgents/jp.co.ntl.SPSENotifier.plist
+

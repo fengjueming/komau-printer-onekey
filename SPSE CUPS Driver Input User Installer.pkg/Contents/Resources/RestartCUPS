@@ -1,0 +1,4 @@
+#!/bin/tcsh
+
+# Reboot PrintingService
+/System/Library/StartupItems/PrintingServices/PrintingServices restart
