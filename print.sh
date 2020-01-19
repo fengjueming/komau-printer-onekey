@@ -19,9 +19,9 @@ function INSDEV()
     hdiutil detach /Volumes/EPSON 
     curl https://www.komazawa-u.ac.jp/~joho/printer2015/Komazawa_u_pd_Mac_Ver4.zip -o /tmp/Komazawa_u_pd_Mac_Ver4.zip
     #curl -O https://ming.moe/Komazawa_u_pd_Mac_Ver4.zip
-    unzip -o Komazawa_u_pd_Mac_Ver4.zip -x '__MACOSX/*'
+    unzip -o /tmp/Komazawa_u_pd_Mac_Ver4.zip -x '__MACOSX/*'
     #installer -pkg 駒澤大学_プリンタードライバー_forMac_Ver4/駒澤大学_プリンタードライバーforMac.pkg -target /
-    installer -pkg 駒澤大学_プリンタードライバー_forMac_Ver4/SPSE\ CUPS\ Driver\ Input\ User\ Installer.pkg -target /
+    installer -pkg /tmp/駒澤大学_プリンタードライバー_forMac_Ver4/SPSE\ CUPS\ Driver\ Input\ User\ Installer.pkg -target /
     rm -rf /tmp/駒澤大学_プリンタードライバー_forMac_Ver4
     rm -rf /tmp/Komazawa_u_pd_Mac_Ver4.zip
     rm -rf /tmp/EPSONPagePrinter_723_21.dmg
